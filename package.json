@@ -24,7 +24,7 @@
     "nodemon": "^2.0.16"
   },
   "scripts": {
-    "start": "tsc && node dist/app.js",
+    "start": "node dist/app.js",
     "dev": "tsc && nodemon dist/app.js",
     "watch": "tsc --watch",
     "lint": "eslint . --ext .ts",
