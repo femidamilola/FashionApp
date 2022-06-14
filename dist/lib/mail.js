@@ -661,7 +661,7 @@ const sendEmail = (email, token, res) => __awaiter(this, void 0, void 0, functio
                                                                               "
                                                                             >
                                                                               <a
-                                                                                href="http://localhost:3000/api/auth/verify?token=${token}"
+                                                                                href="${process.env.APP_URL}/api/auth/verify?token=${token}"
                                                                                 style="
                                                                                   background-color: #ffbe00;
                                                                                   border: 1px

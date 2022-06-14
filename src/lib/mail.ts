@@ -655,7 +655,7 @@ const sendEmail = async (email: string, token: string, res) => {
                                                                               "
                                                                             >
                                                                               <a
-                                                                                href="http://localhost:3000/api/auth/verify?token=${token}"
+                                                                                href="${process.env.APP_URL}/api/auth/verify?token=${token}"
                                                                                 style="
                                                                                   background-color: #ffbe00;
                                                                                   border: 1px
