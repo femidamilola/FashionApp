@@ -1,0 +1,1 @@
+{"version":3,"file":"basicInfo.js","sourceRoot":"","sources":["../../../src/Swagger/docs/basicInfo.ts"],"names":[],"mappings":"AAAA,MAAM,CAAC,OAAO,GAAG;IACf,OAAO,EAAE,OAAO;IAChB,IAAI,EAAE;QACJ,OAAO,EAAE,OAAO;QAChB,KAAK,EAAE,YAAY;QACnB,WAAW,EAAE,gBAAgB;QAC7B,OAAO,EAAE;YACP,IAAI,EAAE,kBAAkB;YACxB,KAAK,EAAE,sBAAsB;YAC7B,GAAG,EAAE,GAAG;SACT;KACF;CACF,CAAC"}
