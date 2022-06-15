@@ -1,10 +1,9 @@
 // const getTodos = require('./get-todos');
 const swaggerlogin = require("./login");
 const swaggerregister = require("./register");
-// const getTodo = require('./get-todo');
-// const createTodo = require('./create-todo');
-// const updateTodo = require('./update-todo');
-// const deleteTodo = require('./delete-todo');
+const swaggertoken = require("./token");
+const swaggertest = require("./test");
+const swaggerresend = require("./resend");
 
 module.exports = {
   paths: {
@@ -13,6 +12,15 @@ module.exports = {
     },
     "/auth/register": {
       ...swaggerregister,
+    },
+    "/auth/token": {
+      ...swaggertoken,
+    },
+    "/auth/me": {
+      ...swaggertest,
+    },
+    "/auth/resend": {
+      ...swaggerresend,
     },
   },
 };

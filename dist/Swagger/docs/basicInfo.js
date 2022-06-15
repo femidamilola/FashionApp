@@ -4,11 +4,11 @@ module.exports = {
         version: "1.0.0",
         title: "Makeup App",
         description: "Makeup App API",
-        contact: {
-            name: "Olusola Olagunju",
-            email: "ogolagunju@gmail.com",
-            url: "#",
-        },
+        // contact: {
+        //   name: "Olusola Olagunju",
+        //   email: "ogolagunju@gmail.com",
+        //   url: "#",
+        // },
     },
 };
 //# sourceMappingURL=basicInfo.js.map

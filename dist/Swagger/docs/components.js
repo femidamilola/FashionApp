@@ -70,6 +70,28 @@ module.exports = {
                     },
                 },
             },
+            Token: {
+                type: "object",
+                properties: {
+                    refreshToken: {
+                        type: "string",
+                        description: "Refresh Token",
+                    },
+                },
+            },
+            Resend: {
+                type: "object",
+                properties: {
+                    old_email: {
+                        type: "string",
+                        description: "Initial email used",
+                    },
+                    new_email: {
+                        type: "string",
+                        description: "New email used",
+                    },
+                },
+            },
             Error: {
                 type: "object",
                 properties: {
@@ -81,6 +103,9 @@ module.exports = {
                     },
                 },
             },
+        },
+        securitySchemes: {
+            JWT: { type: "apiKey", in: "header", name: "Authorization" },
         },
     },
 };
