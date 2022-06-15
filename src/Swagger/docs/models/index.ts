@@ -4,6 +4,7 @@ const swaggerregister = require("./register");
 const swaggertoken = require("./token");
 const swaggertest = require("./test");
 const swaggerresend = require("./resend");
+const swaggerusers = require("./users");
 
 module.exports = {
   paths: {
@@ -21,6 +22,9 @@ module.exports = {
     },
     "/auth/resend": {
       ...swaggerresend,
+    },
+    "/users": {
+      ...swaggerusers,
     },
   },
 };

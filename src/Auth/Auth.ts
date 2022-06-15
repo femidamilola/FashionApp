@@ -73,7 +73,7 @@ exports.register = async (req, res, next) => {
         details: err.message,
       });
     } else {
-      res.status(1).json({
+      res.status(400).json({
         message: "User not successfully created",
         error: err.message,
       });

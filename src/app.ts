@@ -21,6 +21,7 @@ app.get("/", (req, res) => {
 });
 
 app.use("/api/auth", require("./Auth/Route"));
+app.use("/api/users", require("./User/Route"));
 app.use("/api/swagger", require("./Swagger/Route"));
 
 const server = app.listen(port, () => {

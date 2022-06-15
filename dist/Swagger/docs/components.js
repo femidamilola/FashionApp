@@ -14,10 +14,10 @@ module.exports = {
                         description: "User email",
                         example: "test@mail.com",
                     },
-                    password: {
-                        type: "string",
-                        description: "The user's password, hashed",
-                    },
+                    // password: {
+                    //   type: "string",
+                    //   description: "The user's password, hashed",
+                    // },
                     role: {
                         type: "string",
                         description: "User role, and basis for authorization",
@@ -89,6 +89,20 @@ module.exports = {
                     new_email: {
                         type: "string",
                         description: "New email used",
+                    },
+                },
+            },
+            ArrayOfUsers: {
+                type: "array",
+                items: {
+                    $ref: "#/components/schemas/User",
+                },
+            },
+            UsersResponse: {
+                type: "object",
+                properties: {
+                    data: {
+                        $ref: "#/components/schemas/ArrayOfUsers",
                     },
                 },
             },

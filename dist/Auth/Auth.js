@@ -77,7 +77,7 @@ exports.register = (req, res, next) => __awaiter(this, void 0, void 0, function*
             });
         }
         else {
-            res.status(1).json({
+            res.status(400).json({
                 message: "User not successfully created",
                 error: err.message,
             });
