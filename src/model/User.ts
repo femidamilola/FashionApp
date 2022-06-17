@@ -25,6 +25,10 @@ const UserSchema = new user_mongoose.Schema(
       default: false,
       required: false,
     },
+    profile: {
+      type: Boolean,
+      default: false,
+    },
     verification: [
       {
         type: userSchema.Types.ObjectId,

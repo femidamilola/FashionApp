@@ -16,7 +16,7 @@ const validateEmail = (email) => {
 
 const gen = () => {
   var p = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
-  return [...Array(32)].reduce((a) => a + p[~~(Math.random() * p.length)], "");
+  return [...Array(6)].reduce((a) => a + p[~~(Math.random() * p.length)], "");
 };
 
 exports.register = async (req, res, next) => {
@@ -82,12 +82,18 @@ exports.register = async (req, res, next) => {
 };
 
 exports.verify = async (req, res, next) => {
-  if (!req.query.token)
+  const { email, token } = req.body;
+  if (!token)
     return res.status(400).json({
       message: "I wonder how, I wonder why, I wonder where they are",
     });
-
-  const verif = await auth_verify.findOne({ token: req.query.token });
+  const cleanedEmail = cleanEmail(email);
+  if (!validateEmail(cleanedEmail)) {
+    return res
+      .status(400)
+      .json({ message: "Email is invalid", email: cleanedEmail });
+  }
+  const verif = await auth_verify.findOne({ token });
   if (!verif)
     return res.status(401).json({
       message: "No user found with that token",
@@ -98,11 +104,16 @@ exports.verify = async (req, res, next) => {
     return res.status(400).json({
       message: "Token expired",
     });
+  if (cleanedEmail !== verif.email) {
+    return res.status(400).json({
+      message: "Email does not match",
+    });
+  }
 
   const vuser = await user.findById(verif.user);
   if (vuser.verified)
     return res.status(400).json({
-      message: "User already verified",
+      message: "Email already verified",
     });
   try {
     await auth_verify

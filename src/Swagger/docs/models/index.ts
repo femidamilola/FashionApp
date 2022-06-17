@@ -17,6 +17,9 @@ module.exports = {
     "/auth/token": {
       ...swaggertoken,
     },
+    "/auth/verify": {
+      ...require("./verify"),
+    },
     "/auth/me": {
       ...swaggertest,
     },
@@ -25,6 +28,12 @@ module.exports = {
     },
     "/users": {
       ...swaggerusers,
+    },
+    "/profile": {
+      ...require("./profile"),
+    },
+    "/profile/create": {
+      ...require("./newprofile"),
     },
   },
 };

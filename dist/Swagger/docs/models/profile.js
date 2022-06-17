@@ -1,15 +1,15 @@
 module.exports = {
     get: {
-        tags: ["Users"],
-        description: "Get Users by Role",
-        operationId: "getUsersByRole",
+        tags: ["Profile"],
+        description: "Get Profile by User ID",
+        operationId: "getProfileByUserID",
         parameters: [
             {
                 in: "query",
-                name: "role",
+                name: "user",
                 schema: {
                     type: "string",
-                    description: "The user role for the query",
+                    description: "The user id",
                 },
             },
         ],
@@ -21,11 +21,11 @@ module.exports = {
         requestBody: {},
         responses: {
             "200": {
-                description: "A list of users",
+                description: "A profile",
                 content: {
                     "application/json": {
                         schema: {
-                            $ref: "#/components/schemas/UsersResponse",
+                            $ref: "#/components/schemas/ProfileResponse",
                         },
                     },
                 },
@@ -36,4 +36,4 @@ module.exports = {
         },
     },
 };
-//# sourceMappingURL=users.js.map
+//# sourceMappingURL=profile.js.map

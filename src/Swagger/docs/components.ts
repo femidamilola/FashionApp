@@ -79,6 +79,20 @@ module.exports = {
           },
         },
       },
+      Verify: {
+        type: "object",
+        properties: {
+          token: {
+            type: "string",
+            description: "Token",
+            required: true,
+          },
+          email: {
+            type: "string",
+            required: true,
+          },
+        },
+      },
       Resend: {
         type: "object",
         properties: {
@@ -89,6 +103,39 @@ module.exports = {
           new_email: {
             type: "string",
             description: "New email used",
+          },
+        },
+      },
+      Profile: {
+        type: "object",
+        properties: {
+          id: {
+            type: "string",
+            description: "Profile unique id",
+          },
+          name: {
+            type: "object",
+            properties: {
+              first: {
+                type: "string",
+              },
+              last: {
+                type: "string",
+              },
+            },
+          },
+          phone: {
+            type: "string",
+            description: "Phone Number",
+            example: "Admin",
+          },
+          createdAt: {
+            type: "string",
+            description: "Timestamp",
+          },
+          updatedAt: {
+            type: "string",
+            description: "Timestamp",
           },
         },
       },
@@ -103,6 +150,14 @@ module.exports = {
         properties: {
           data: {
             $ref: "#/components/schemas/ArrayOfUsers",
+          },
+        },
+      },
+      ProfileResponse: {
+        type: "object",
+        properties: {
+          profile: {
+            $ref: "#/components/schemas/Profile",
           },
         },
       },

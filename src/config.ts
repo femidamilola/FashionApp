@@ -1,4 +1,4 @@
 module.exports = {
-  tokenLife: 900,
+  tokenLife: 86400,
   refreshTokenLife: 86400,
 };
