@@ -24,7 +24,8 @@ const gen = () => {
     return [...Array(6)].reduce((a) => a + p[~~(Math.random() * p.length)], "");
 };
 exports.register = (req, res, next) => __awaiter(this, void 0, void 0, function* () {
-    const { email, password } = req.body;
+    const profile = require("../model/Profile");
+    const { email, password, fullName } = req.body;
     const cleanedEmail = cleanEmail(email);
     if (!validateEmail(cleanedEmail)) {
         return res
@@ -41,6 +42,7 @@ exports.register = (req, res, next) => __awaiter(this, void 0, void 0, function*
             .create({
             email: cleanedEmail,
             password: hashed_password,
+            fullName,
         })
             .then((response) => __awaiter(this, void 0, void 0, function* () {
             return yield auth_verify

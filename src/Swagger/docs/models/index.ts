@@ -29,11 +29,11 @@ module.exports = {
     "/users": {
       ...swaggerusers,
     },
-    "/profile": {
-      ...require("./profile"),
-    },
-    "/profile/create": {
-      ...require("./newprofile"),
-    },
+    // "/profile": {
+    //   ...require("./profile"),
+    // },
+    // "/profile/create": {
+    //   ...require("./newprofile"),
+    // },
   },
 };

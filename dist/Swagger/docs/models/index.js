@@ -14,8 +14,12 @@ module.exports = {
         "/auth/me": Object.assign({}, swaggertest),
         "/auth/resend": Object.assign({}, swaggerresend),
         "/users": Object.assign({}, swaggerusers),
-        "/profile": Object.assign({}, require("./profile")),
-        "/profile/create": Object.assign({}, require("./newprofile")),
+        // "/profile": {
+        //   ...require("./profile"),
+        // },
+        // "/profile/create": {
+        //   ...require("./newprofile"),
+        // },
     },
 };
 //# sourceMappingURL=index.js.map

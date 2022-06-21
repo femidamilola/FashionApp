@@ -14,6 +14,17 @@ module.exports = {
                         description: "User email",
                         example: "test@mail.com",
                     },
+                    name: {
+                        type: "object",
+                        properties: {
+                            first: {
+                                type: "string",
+                            },
+                            last: {
+                                type: "string",
+                            },
+                        },
+                    },
                     // password: {
                     //   type: "string",
                     //   description: "The user's password, hashed",
@@ -67,6 +78,11 @@ module.exports = {
                     password: {
                         type: "string",
                         description: "User Password",
+                    },
+                    fullName: {
+                        type: "string",
+                        description: "User Name",
+                        example: "John Doe",
                     },
                 },
             },

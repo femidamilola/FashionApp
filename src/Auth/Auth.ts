@@ -20,7 +20,8 @@ const gen = () => {
 };
 
 exports.register = async (req, res, next) => {
-  const { email, password } = req.body;
+  const profile = require("../model/Profile");
+  const { email, password, fullName } = req.body;
   const cleanedEmail = cleanEmail(email);
   if (!validateEmail(cleanedEmail)) {
     return res
@@ -38,6 +39,7 @@ exports.register = async (req, res, next) => {
       .create({
         email: cleanedEmail,
         password: hashed_password,
+        fullName,
       })
       .then(
         async (response) =>
