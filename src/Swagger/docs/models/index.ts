@@ -1,33 +1,25 @@
-// const getTodos = require('./get-todos');
-const swaggerlogin = require("./login");
-const swaggerregister = require("./register");
-const swaggertoken = require("./token");
-const swaggertest = require("./test");
-const swaggerresend = require("./resend");
-const swaggerusers = require("./users");
-
 module.exports = {
   paths: {
     "/auth/login": {
-      ...swaggerlogin,
+      ...require("./login"),
     },
     "/auth/register": {
-      ...swaggerregister,
+      ...require("./register"),
     },
     "/auth/token": {
-      ...swaggertoken,
+      ...require("./token"),
     },
     "/auth/verify": {
       ...require("./verify"),
     },
     "/auth/me": {
-      ...swaggertest,
+      ...require("./test"),
     },
     "/auth/resend": {
-      ...swaggerresend,
+      ...require("./resend"),
     },
     "/users": {
-      ...swaggerusers,
+      ...require("./users"),
     },
     // "/profile": {
     //   ...require("./profile"),
